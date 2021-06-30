@@ -62,4 +62,47 @@
 
 // db.posts.update({ title: "Post One" }, { $rename: { likes: "views" } });
 
-db.posts.find().pretty();
+// db.posts.find().pretty();
+// db.posts.remove({ title: "Post Four" });
+
+// db.posts.update(
+//   { title: "Post One" },
+//   {
+//     $set: {
+//       comments: [
+//         {
+//           user: "Mary Williams",
+//           body: "Comment One",
+//           date: Date(),
+//         },
+//         {
+//           user: "Harry Potter",
+//           body: "Comment Two",
+//           date: Date(),
+//         },
+//       ],
+//     },
+//   }
+// );
+
+// db.posts.find({ title: "Post One" }).pretty();
+
+// db.posts.find({
+//   comments: {
+//     $elemMatch: {
+//       user: "Mary Williams",
+//     },
+//   },
+// });
+
+// db.posts.createIndex({ title: "text" });
+
+// db.posts.find({
+//   $text: {
+//     $search: '"Post T"',
+//   },
+// });
+
+// db.posts.update({ title: "Post Two" }, { $set: { views: 10 } });
+
+db.posts.find({ views: { $gt: 3 } });
